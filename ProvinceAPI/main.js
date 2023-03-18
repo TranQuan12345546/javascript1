@@ -26,7 +26,7 @@ async function getProvince() {
         option.value = `${res.data[i].code}`;
         province.insertAdjacentElement('beforeend', option);
     }
-    province.addEventListener('click', function() {
+    province.addEventListener('change', function() {
         getDistrict(province.value);
     })
 }
@@ -58,7 +58,7 @@ async function getDistrict(provinceCode) {
         district.insertAdjacentElement('beforeend', option);
     }
 
-    district.addEventListener('click', function() {
+    district.addEventListener('change', function() {
         getCommune(district.value);
     })
 } 
