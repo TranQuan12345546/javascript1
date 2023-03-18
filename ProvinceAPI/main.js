@@ -1,21 +1,21 @@
 const province = document.getElementById('province');
 const option1 = document.createElement('option');
 option1.innerText = '--chọn thành phố--';
-option1.value = '';
+option1.disabled = true;
 province.insertAdjacentElement('afterbegin', option1);
 
 
 const district = document.getElementById('district');
 const option2 = document.createElement('option');
 option2.innerText = '--chọn quận, huyện--';
-option2.value = '';
+option2.disabled = true;
 district.insertAdjacentElement('afterbegin', option2);
 
 
 const commune = document.getElementById('commune');
 const option3 = document.createElement('option');
 option3.innerText = '--chọn xã, phường--';
-option3.value = '';
+option3.disabled = true;
 commune.insertAdjacentElement('afterbegin', option3);
 
 async function getProvince() {
