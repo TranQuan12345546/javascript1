@@ -56,7 +56,7 @@ async function getSubBreedList() {
 async function getRandomImage() {
     try {
         // Gọi API lấy ảnh random của dog
-        let res = await axios.get("https://dog.ceo/api/breeds/image/random")
+        let res = await axios.get("https://dog.ceo/api/breed/hound/afghan/images/random")
 
         // Gán URL cho thẻ image
         image.src = res.data.message
