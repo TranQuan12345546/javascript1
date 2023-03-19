@@ -15,9 +15,11 @@ const option3 = document.createElement('option');
 option3.innerText = '--chọn xã, phường--';
 commune.insertAdjacentElement('afterbegin', option3);
 
+
 async function getProvince() {
     let res = await axios.get("https://provinces.open-api.vn/api/p/");
-    for(let i = 0; i < res.data.length; i++) {
+    let provinceLength = res.data.length;
+    for(let i = 0; i < provinceLength; i++) {
         let option = document.createElement('option');
         option.innerText = res.data[i].name;
         option.value = `${res.data[i].code}`;
@@ -36,6 +38,7 @@ async function getDistrict(provinceCode) {
     let res = await axios.get(`https://provinces.open-api.vn/api/p/${provinceCode}?depth=2`);
     let district2 = res.data.districts.length;
     let child = district.lastElementChild;
+    option2.disabled = true;
 
     while (child) {
         if (child == option2) {
@@ -57,7 +60,7 @@ async function getDistrict(provinceCode) {
     }
 
     district.addEventListener('change', function() {
-        option2.disabled = true;
+        
         getCommune(district.value);
     })
 } 
@@ -77,7 +80,8 @@ async function getCommune(districtCode) {
         // gán child bằng phần tử con cuối cùng mới
         child = commune.lastElementChild;
     }
-    for (let i = 0; i < res.data.wards.length; i++) {
+    let communeLength = res.data.wards.length;
+    for (let i = 0; i < communeLength; i++) {
         let option = document.createElement('option');
         option.innerText = res.data.wards[i].name;
         option.value = `${res.data.wards[i].code}`;
