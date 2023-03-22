@@ -39,10 +39,14 @@ btn.addEventListener ('click', function() {
     btn2.style.backgroundColor = 'white';
     btn3.style.color = 'black';
     btn3.style.backgroundColor = 'white';
+    let h1 = document.querySelector('h1');
+    h1.innerText = `Type: ${btn.innerText}`;
     let ul = document.querySelector('ul');
     body.removeChild(ul);
     getPosts();
 });
+
+getPosts();
 
 
 function getTitle(json) {
@@ -62,6 +66,8 @@ btn2.addEventListener('click', function() {
     btn.style.backgroundColor = 'white';
     btn3.style.color = 'black';
     btn3.style.backgroundColor = 'white';
+    let h1 = document.querySelector('h1');
+    h1.innerText = `Type: ${btn2.innerText}`;
     let ul = document.querySelector('ul');
     body.removeChild(ul);
     getPhotos();
@@ -89,7 +95,7 @@ function getPhotosTitle(json) {
         }
 }
 
-getPosts();
+
 
 btn3.addEventListener('click', function() {
     btn3.style.color = 'white';
@@ -98,6 +104,8 @@ btn3.addEventListener('click', function() {
     btn.style.backgroundColor = 'white';
     btn2.style.color = 'black';
     btn2.style.backgroundColor = 'white';
+    let h1 = document.querySelector('h1');
+    h1.innerText = `Type: ${btn3.innerText}`;
     let ul = document.querySelector('ul');
     body.removeChild(ul);
     getAlbums();

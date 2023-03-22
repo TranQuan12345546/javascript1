@@ -52,46 +52,17 @@ for(let i = 0; i < quizes.length; i++) {
 
 let btn = document.querySelector('button');
 btn.addEventListener('click', function() {
-    randomQuiz(quizes);
+    randomQuiz();
 })
 
-function randomQuiz(quizes) {
-    let divAnswer = document.querySelectorAll('.quiz-answer');
-    console.log(divAnswer);
-
+function randomQuiz() {
+    let divAnswer = document.querySelectorAll('.quiz-item');
     for (let i = 0; i < divAnswer.length; i++) {
-        
-        console.log(range);
         let divAnswerItem = divAnswer[i].querySelectorAll('.quiz-answer-item');
-        for ( let j = 0; j < divAnswerItem.length; j++) {
-            let range = Math.floor(Math.random() * divAnswerItem.length);
-            let label = divAnswerItem[range].querySelector(`.${range}`);
-            
-        }
-        // for (let j = 0; j < divAnswer[i].answers.length; j++) {
-            
-        //     let divAnswerItem = document.querySelectorAll(`.${j+1}input`);
-        //     console.log(divAnswerItem);
-        //     // for (let k = 0; k < ) {
-
-        //     // }
-        //     if (divAnswerItem[i].answers[range] ) {
-                
-        //     }
-        // }
-        
-        
-
+        let range = Math.floor(Math.random() * 4);
+        let input = divAnswerItem[range].querySelector('input');
+        input.setAttribute('checked', 'true');
     }
-    
-    // console.log(range);
-    // for (let i = 0; i < quizes.length; i++) {
-    //     if(quizes[i].id -1 != range) {
-    //         divAnswer[i].style.display = 'none';
-    //     } else {
-    //         divAnswer[i].style.display = 'block';
-            
-    //     }
-    // }
+
 }
  
